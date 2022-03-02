@@ -28,7 +28,7 @@ pub fn print_save() {
 
     let sum: u32 = 5 + 10;
     println!("Addition: 5 + 10 = {}", sum);
-    
+
     let difference: f64 = 94.5 - 10.4;
     println!("Substraction: 94.5 - 10.1 = {}", difference);
 
@@ -54,8 +54,15 @@ pub fn print_save() {
 
     // Compound Types
     let tup: (&str, i32) = ("Let's Get Rusty", 100_000);
-    let (channel, sub_count) = tup;
-    println!("Compound type: {} {}", channel, sub_count);
+    let (channel, sub_count1) = tup;
+    let sub_count2 = tup.1;
+    println!("Compound type: {} {} {}", channel, sub_count1, sub_count2);
 
-    // 6:48
+    // Array
+    let error_codes: [i32; 3] = [200, 404, 500];
+    let not_found: i32 = error_codes[1];
+    let array: [i32; 6] = [9; 6]; 
+    println!("Array results: {}, {}", not_found, array[2]);
+
+
 }
