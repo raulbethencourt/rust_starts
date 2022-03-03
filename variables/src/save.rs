@@ -3,6 +3,7 @@ pub fn print_save() {
     let mut x = 5;
     println!("The value of x is : {}", x);
     x = 2;
+    
     println!("The value of x is : {}", x);
 
     const CONSTANT_NUMBER: u32 = 100_000;
