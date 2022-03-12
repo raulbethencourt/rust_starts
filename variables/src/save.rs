@@ -11,7 +11,7 @@ pub fn print_save() {
 
     // shadowing
     let x: u32 = 5;
-    println!("The value of x is : {}", x);
+    println!("The valu e of x is : {}", x);
     let x: &str = "six";
     println!("The value of x is : {}", x);
 

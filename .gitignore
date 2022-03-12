@@ -2,7 +2,6 @@
 # will have compiled files and executables
 guessing_game/target/
 hello_wold/target/
-ruslings/target/
 variables/target/
 ownership/target/
 
