@@ -6,6 +6,7 @@ struct User {
 }
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
+struct AlwaysEqual;
 
 fn main() {
     let mut user1 = User {
@@ -26,8 +27,13 @@ fn main() {
 
     println!("{} {} {}", user1.username, user2.email, user3.email);
 
-    let _black = Color(0, 0, 0);
+    // struct tuples 
+    let _black = Color(10, 520, 8);
     let _origin = Point(0, 0, 0);
+
+    println!("{}", _black.1);
+
+    let subject = AlwaysEqual;
 }
 
 fn build_user(email: String, username: String) -> User {
