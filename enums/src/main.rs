@@ -12,6 +12,14 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+#[derive(Debug)]
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
 impl Message {
     fn call(&self) {
         dbg!(&self);
@@ -33,4 +41,15 @@ fn main() {
     let absent_number: Option<i32> = None;
 
     dbg!(some_number, some_string, absent_number);
+    dbg!(value_in_cents(Coin::Penny));
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1,
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
+    
 }
