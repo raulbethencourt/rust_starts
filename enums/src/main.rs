@@ -22,7 +22,7 @@ enum UsState {
 
 #[derive(Debug)]
 enum Coin {
-    Penny,
+    Dollar,
     Nickel,
     Dime,
     Quarter(UsState),
@@ -49,7 +49,7 @@ fn main() {
     let absent_number: Option<i32> = None;
 
     dbg!(some_number, some_string, absent_number);
-    dbg!(value_in_cents(Coin::Penny));
+    dbg!(value_in_cents(Coin::Dollar));
     dbg!(value_in_cents(Coin::Quarter(UsState::Alaska)));
 
     let five = Some(5);
@@ -72,8 +72,8 @@ fn remove_fancy_hat() {}
 /// Fn to test match with brackets
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => {
-            println!("Lucky penny");
+        Coin::Dollar => {
+            println!("Lucky Dollar");
             1
         }
         Coin::Nickel => 5,
