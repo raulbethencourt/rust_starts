@@ -51,8 +51,25 @@ fn main() {
     dbg!(some_number, some_string, absent_number);
     dbg!(value_in_cents(Coin::Penny));
     dbg!(value_in_cents(Coin::Quarter(UsState::Alaska)));
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+    dbg!(six, none);
+
+    // empty tuple with catch-all pattern
+    let dice_roll = 9;
+    match dice_roll {
+        3 => add_fancy_hat(),
+        7 => remove_fancy_hat(),
+        _ => (),
+    }
 }
 
+fn add_fancy_hat() {}
+fn remove_fancy_hat() {}
+
+/// Fn to test match with brackets
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => {
@@ -65,5 +82,13 @@ fn value_in_cents(coin: Coin) -> u8 {
             println!("State quarter form {:?}!", state);
             25
         }
+    }
+}
+
+/// Fn to test match with options
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
     }
 }
