@@ -64,8 +64,26 @@ fn main() {
         7 => remove_fancy_hat(),
         _ => (),
     }
-}
 
+    // let-if
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
+
+    let coin = Coin::Quarter(UsState::Alaska);
+    let mut _count = 0;
+    match coin {
+        Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+        _ => _count += 1,
+    }
+
+    if let Coin::Quarter(state) = coin {
+        println!("State quarter from {:?}!", state);
+    } else {
+        _count += 1;
+    }
+}
 fn add_fancy_hat() {}
 fn remove_fancy_hat() {}
 
