@@ -1,8 +1,6 @@
-use restaurant::eat_at_restaurant;
-use std::collections::HashMap;
-use std::fmt;
-use std::fmt::format;
-use std::io;
+use rand::Rng;
+pub(crate) use restaurant::eat_at_restaurant;
+pub(crate) use std::{collections::*, fmt::Result as fmtResult, io::Result};
 
 /// .
 fn main() {
@@ -12,19 +10,23 @@ fn main() {
     let mut map: HashMap<i32, i32> = HashMap::new();
     map.insert(1, 2);
 
-    let _test1: Result<(), fmt::Error> = function1();
-    let _test2: Result<(), io::Error> = function2();
+    let _test1 = function1();
+    let _test2 = function2();
+    dbg!(_test1);
+    dbg!(_test2);
+
+    let secret_number = rand::thread_rng().gen_range(1..101);
+    dbg!(secret_number);
 }
 
-fn function1() -> fmt::Result {
+fn function1() -> fmtResult {
     // .
-    format(format_args!("{}", 1));
+    fmtResult::Ok(());
     Ok(())
 }
 
-fn function2() -> io::Result<()> {
+fn function2() -> Result<()> {
     // .
-    let mut buffer = String::new();
-    io::stdin().read_line(&mut buffer)?;
+    Result::Ok(());
     Ok(())
 }
