@@ -17,6 +17,7 @@ pub fn eat_at_restaurant() {
         toast: String::from(r#"Rye"#),
         seasonal_fruits: String::from(r#"peaches"#),
     };
+
     // Change our mind about what bread we'd like
     meal.toast = String::from("Wheat");
     println!(r#"I'd like {} toast please"#, meal.toast);
@@ -24,3 +25,6 @@ pub fn eat_at_restaurant() {
     let _order1 = Appetizer::Soup;
     let _order2 = Appetizer::Salad;
 }
+
+
+
