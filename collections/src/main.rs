@@ -1,5 +1,6 @@
 mod hashmap;
 use crate::hashmap::set_hashmap;
+use std::collections::HashMap;
 
 #[derive(Debug)]
 enum SpreadsheetCell {
@@ -69,4 +70,22 @@ fn main() {
 
     let hash_data = set_hashmap(String::from("red"), 69);
     dbg!(hash_data.get(&String::from("red")));
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+
+    println!("{:?}", scores);
+
+    let text = "hello world wonderful world";
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    print!("{:?}", map);
 }
