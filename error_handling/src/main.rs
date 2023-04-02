@@ -1,7 +1,6 @@
 mod save;
 use save::examples;
 use std::net::IpAddr;
-
 use std::{error::Error, fs::File, io};
 
 fn main() -> Result<(), Box<dyn Error>> {

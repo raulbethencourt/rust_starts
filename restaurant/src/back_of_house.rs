@@ -29,7 +29,7 @@ impl Breakfast {
 
     /// Returns a mutable reference to the seasonal fruits of this [`Breakfast`].
     pub fn seasonal_fruits_mut(&mut self) -> &mut String {
-        &mut self.seasonal_fruits
+        &mut self.seasonal_fruit
     }
 
     /// Returns a mutable reference to the toast of this [`Breakfast`].
